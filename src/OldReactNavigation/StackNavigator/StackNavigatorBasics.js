@@ -1,7 +1,6 @@
 import {
     StackNavigator
 } from 'react-navigation';
-
 import LanuchPage from './../Pages/LanuchPage';
 import LoginPage from './../Pages/LoginPage';
 import MainPage from './../Pages/MainPage';
@@ -21,7 +20,6 @@ const RouteConfigs = {
 const StackNavigatorConfig = {
     initialRouteName: "LanuchPage"
 };
-
 export default StackNavigator(RouteConfigs, StackNavigatorConfig);
 
 
