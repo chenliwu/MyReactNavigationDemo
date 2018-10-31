@@ -22,14 +22,17 @@ export default class LanuchPage extends React.Component {
     // this._toLoginPage来调用
     _toLoginPage = () => {
         //跳转页面并传递参数
-        this.props.navigation.navigate("LoginPage",{
-            account:"chenliwu",
+        this.props.navigation.navigate("LoginPage", {
+            account: "chenliwu",
         });
     }
 
     _toMainPage = () => {
-        this.props.navigation.navigate("MainPage",{
-            account:"chenliwu",
+        /**
+         * 跳转到MainPage页面，并传参
+         */
+        this.props.navigation.navigate("MainPage", {
+            account: "chenliwu",
         });
     }
 
