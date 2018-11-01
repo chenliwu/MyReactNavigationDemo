@@ -17,6 +17,7 @@ import SettingsPage from './Settings/SettingsPage';
 
 import AppTheme from './../theme/theme';
 
+import GlobalNavigationOptions from '../navigatorConfig/GlobalNavigationOptions';
 
 /**
  * 2018-11-1
@@ -116,6 +117,9 @@ export default createStackNavigator(
     },
     {
         initialRouteName: "TabNavigator",
+        headerMode: 'float',
+        headerLayoutPreset: 'center',
+        navigationOptions: GlobalNavigationOptions
     }
 );
 

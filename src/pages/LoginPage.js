@@ -18,6 +18,8 @@ import FaceDetectionPage from './Settings/FaceDetectionPage';
 
 import AppStackActions from './Navigator/AppStackActions';
 
+import GlobalNavigationOptions from '../navigatorConfig/GlobalNavigationOptions';
+
 /**
  * 登录页面
  */
@@ -26,7 +28,7 @@ class LoginPage extends React.Component {
     static navigationOptions = {
         header: null,
         headerTitle: "登录",
-        gesturesEnabled: true,//设置滑动退出
+        gesturesEnabled: false,//不允许滑动退出
     }
 
     constructor(props) {
@@ -73,5 +75,6 @@ export default createStackNavigator(
         initialRouteName: "LoginPage",
         headerMode: 'float',
         headerLayoutPreset: 'center',
+        navigationOptions: GlobalNavigationOptions
     }
 );

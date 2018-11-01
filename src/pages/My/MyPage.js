@@ -32,7 +32,7 @@ export default class MyPage extends Component {
                 <Button title="进入设置页面" onPress={() => {
                     this.props.navigation.navigate("SettingsPage");
                 }}></Button>
-                <Button title="进入人类采集页面" onPress={() => {
+                <Button title="进入人脸采集页面" onPress={() => {
                     this.props.navigation.navigate("FaceDetectionPage", { type: "collection", headerTitle: "人类采集" });
                 }}></Button>
                 <Button title="注销：返回登录页面" onPress={() => {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text
+    Text,
+    TouchableHighlight
 } from 'react-native';
 
 /**
@@ -11,6 +12,9 @@ export default class SettingsPage extends Component {
 
     static navigationOptions = {
         headerTitle: "设置",
+        headerRight: <TouchableHighlight onPress={() => {
+            alert("点击了菜单");
+        }}><Text style={{ marginLeft: 20 }}>菜单</Text></TouchableHighlight>,
     };
 
     render() {
