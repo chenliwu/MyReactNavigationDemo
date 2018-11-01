@@ -11,7 +11,10 @@ import createStackNavigator from './src/stackNavigator/createStackNavigator';
 //SwitchNavigator
 import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
 
+//LanuchPageNavigator
+import LanuchPageNavigator from './src/navigator/LanuchPageNavigator';
+
 /**
  * 测试
  */
-AppRegistry.registerComponent('MyReactNavigationDemo', () => createSwitchNavigator);
+AppRegistry.registerComponent('MyReactNavigationDemo', () => LanuchPageNavigator);

@@ -5,8 +5,6 @@ import {
     Button
 } from 'react-native';
 
-import AppStackActions from './../Navigator/AppStackActions';
-
 /**
  * 人脸采集页面
  */
@@ -31,7 +29,7 @@ export default class SettingsPage extends Component {
                 <Text>type:{this.type}</Text>
                 <Text>headerTitle:{this.props.navigation.getParam("headerTitle")}</Text>
                 <Button title="跳转到主页" onPress={() => {
-                    AppStackActions.resetActionToMainPage(this.props.navigation);
+                    this.props.navigation.replace("MainPage");
                 }}></Button>
             </View>
         );

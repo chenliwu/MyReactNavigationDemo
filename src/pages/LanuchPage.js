@@ -63,5 +63,4 @@ export default class LanuchPage extends React.Component {
         );
     }
 
-
 }

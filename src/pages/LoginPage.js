@@ -6,24 +6,10 @@ import {
     Button
 } from 'react-native';
 
-import {
-    createStackNavigator,
-    StackActions,
-    NavigationActions
-} from 'react-navigation';
-
-import ArgeementPage from './ArgeementPage';
-import MainTabPage from './MainTabPage';
-import FaceDetectionPage from './Settings/FaceDetectionPage';
-
-import AppStackActions from './Navigator/AppStackActions';
-
-import GlobalNavigationOptions from '../navigatorConfig/GlobalNavigationOptions';
-
 /**
  * 登录页面
  */
-class LoginPage extends React.Component {
+export default class LoginPage extends React.Component {
 
     static navigationOptions = {
         header: null,
@@ -43,7 +29,7 @@ class LoginPage extends React.Component {
                     this.props.navigation.navigate("ArgeementPage");
                 }}></Button>
                 <Button title="进入主页" onPress={() => {
-                    AppStackActions.resetActionToMainPage(this.props.navigation);
+                    this.props.navigation.replace("MainPage");
                 }}></Button>
                 <Button title="进入人脸登录页面" onPress={() => {
                     this.props.navigation.navigate("FaceDetectionPage", { type: 'login', headerTitle: "人脸登录" });
@@ -53,28 +39,28 @@ class LoginPage extends React.Component {
     }
 }
 
-export default createStackNavigator(
-    {
-        LoginPage: {
-            screen: LoginPage,
-        },
-        ArgeementPage: {
-            screen: ArgeementPage,
-        },
-        MainTabPage: {
-            screen: MainTabPage,
-            navigationOptions: {
-                header: null,
-            }
-        },
-        FaceDetectionPage: {
-            screen: FaceDetectionPage,
-        }
-    },
-    {
-        initialRouteName: "LoginPage",
-        headerMode: 'float',
-        headerLayoutPreset: 'center',
-        navigationOptions: GlobalNavigationOptions
-    }
-);
+// export default createStackNavigator(
+//     {
+//         LoginPage: {
+//             screen: LoginPage,
+//         },
+//         ArgeementPage: {
+//             screen: ArgeementPage,
+//         },
+//         MainTabPage: {
+//             screen: MainTabPage,
+//             navigationOptions: {
+//                 header: null,
+//             }
+//         },
+//         FaceDetectionPage: {
+//             screen: FaceDetectionPage,
+//         }
+//     },
+//     {
+//         initialRouteName: "LoginPage",
+//         headerMode: 'float',
+//         headerLayoutPreset: 'center',
+//         navigationOptions: GlobalNavigationOptions
+//     }
+// );

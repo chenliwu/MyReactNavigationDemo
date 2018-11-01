@@ -13,11 +13,8 @@ import ApprovePage from './Approve/ApprovePage';
 import ChartsPage from './Charts/ChartsPage';
 import NotificationPage from './Notification/NotificationPage';
 import MyPage from './My/MyPage';
-import SettingsPage from './Settings/SettingsPage';
 
 import AppTheme from './../theme/theme';
-
-import GlobalNavigationOptions from '../navigatorConfig/GlobalNavigationOptions';
 
 /**
  * 2018-11-1
@@ -103,25 +100,28 @@ const TabNavigator = createBottomTabNavigator(
         },
     }
 );
-export default createStackNavigator(
-    {
-        TabNavigator: {
-            screen: TabNavigator,
-            navigationOptions: {
-                header: null,
-            }
-        },
-        SettingsPage: { //设置页面
-            screen: SettingsPage,
-        },
-    },
-    {
-        initialRouteName: "TabNavigator",
-        headerMode: 'float',
-        headerLayoutPreset: 'center',
-        navigationOptions: GlobalNavigationOptions
-    }
-);
+
+export default TabNavigator;
+
+// export default createStackNavigator(
+//     {
+//         TabNavigator: {
+//             screen: TabNavigator,
+//             navigationOptions: {
+//                 header: null,
+//             }
+//         },
+//         SettingsPage: { //设置页面
+//             screen: SettingsPage,
+//         },
+//     },
+//     {
+//         initialRouteName: "TabNavigator",
+//         headerMode: 'float',
+//         headerLayoutPreset: 'center',
+//         navigationOptions: GlobalNavigationOptions
+//     }
+// );
 
 
 
