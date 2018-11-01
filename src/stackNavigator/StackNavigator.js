@@ -1,9 +1,9 @@
 import React from 'react';
-import { 
+import {
     View,
     Text,
     Button
- } from 'react-native';
+} from 'react-native';
 import {
     StackNavigator,
     createStackNavigator
@@ -22,12 +22,12 @@ import LoginPage from './../pages/LoginPage';
  */
 const MyStackNavigator = StackNavigator(
     {
-        LanuchPage:LanuchPage,
-        MainPage:MainPage,
-        LoginPage:LoginPage,
+        LanuchPage: LanuchPage,
+        MainPage: MainPage,
+        LoginPage: LoginPage,
     },
     {
-        initialRouteName:"LanuchPage",      //初始化页面
+        initialRouteName: "LanuchPage",      //初始化页面
     }
 );
 
@@ -39,31 +39,32 @@ const MyStackNavigator = StackNavigator(
  */
 const MyStackNavigator1 = createStackNavigator(
     {
-        LanuchPage:{
-            screen:LanuchPage,
-            navigationOptions:{      
+        LanuchPage: {
+            screen: LanuchPage,
+            navigationOptions: {
                 //这里可以配置navigationOptions，
-                //在LanuchPage中也可配置static的navigationOptions
-                headerTitle:"启动页面",
+                //在LanuchPage中也可配置static的navigationOptions，这里的优先级高
+                //建议在具体LanuchPage配置navigationOptions
+                //headerTitle: "启动页面",
             }
         },
-        MainPage:MainPage,
-        LoginPage:LoginPage,
+        MainPage: MainPage,
+        LoginPage: LoginPage,
     },
     {
-        initialRouteName:"LanuchPage",      //初始化页面
-        headerLayoutPreset:'center',        //指定header组件的布局
-        navigationOptions:{
-            gesturesEnabled:true,   //是否允许使用手势来关闭页面，在 iOS 上默认为true，在 Android 上默认为false。
+        initialRouteName: "LanuchPage",      //初始化页面
+        headerLayoutPreset: 'center',        //指定header组件的布局
+        navigationOptions: {
+            gesturesEnabled: true,   //是否允许使用手势来关闭页面，在 iOS 上默认为true，在 Android 上默认为false。
         }
     }
 );
 
 //export default MyStackNavigator;
-export default class MyStackNavigatorPage extends React.Component{
-    render(){
+export default class MyStackNavigatorPage extends React.Component {
+    render() {
         return (
-            <MyStackNavigator1/>
+            <MyStackNavigator1 />
         )
     }
 }
