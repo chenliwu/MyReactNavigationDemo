@@ -59,6 +59,9 @@ export default class LanuchPage extends React.Component {
                         account: "chenliwu",
                     });
                 }}></Button>
+                <Button title="进入测试mobx页面" onPress={() => {
+                    this.props.navigation.push("TestMobxPage");
+                }}></Button>
             </View>
         );
     }

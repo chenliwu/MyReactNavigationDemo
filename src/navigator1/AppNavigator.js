@@ -5,6 +5,8 @@ import SettingsPage from './pages/Settings/SettingsPage';
 import ArgeementPage from './pages/ArgeementPage';
 import FaceDetectionPage from './pages/Settings/FaceDetectionPage';
 
+import TestMobxPage from './pages/TestMobxPage';
+
 import MainTabNavigator from './MainTabNavigator';
 
 import {
@@ -52,6 +54,10 @@ export default createStackNavigator(
             navigationOptions: {
                 header: null,
             }
+        },
+        TestMobxPage: {
+            //测试mobx页面
+            screen: TestMobxPage,
         }
     },
     {
@@ -60,3 +66,4 @@ export default createStackNavigator(
         headerLayoutPreset: 'center',
     }
 );
+

@@ -1,5 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
 
 import MySwitchNavigator from './src/switchNavigator/MySwitchNavigator';
 import StackNavigatorBasics from './src/OldReactNavigation/StackNavigator/StackNavigatorBasics';
@@ -22,8 +21,12 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
  * chenlw
  * work：测试APP只使用一个StackNavigator
  */
+//import AppNavigator from './src/navigator1/AppNavigator';
+//AppRegistry.registerComponent('MyReactNavigationDemo', () => AppNavigator);
+
 import AppNavigator from './src/navigator1/AppNavigator';
-AppRegistry.registerComponent('MyReactNavigationDemo', () => AppNavigator);
+import App from './src/App';
+AppRegistry.registerComponent('MyReactNavigationDemo', () => App);
 
 
 
