@@ -1,5 +1,6 @@
 import LanuchPage from './../pages/LanuchPage';
-import MainPage from './../pages/MainPage';
+import MainPageNavigator from './../navigator/MainPageNavigator';
+import AppSettingPage from './../pages/Settings/AppSettingPage';
 
 import LoginPageNavigator from './LoginPageNavigator';
 
@@ -15,8 +16,11 @@ export default createSwitchNavigator(
         LoginPage: {
             screen: LoginPageNavigator,
         },
-        MainPage: {
-            screen: MainPage,
+        AppSettingPage: {
+            screen: AppSettingPage,
+        },
+        MainTabPage: {
+            screen: MainPageNavigator,
         },
     },
     {

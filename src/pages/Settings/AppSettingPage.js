@@ -18,7 +18,7 @@ class AppSettingPage extends React.Component {
 
     static navigationOptions = {
         headerTitle: "设置",
-        gesturesEnabled: true,//设置滑动退出
+        //gesturesEnabled: true,//设置滑动退出
     }
 
     constructor(props) {

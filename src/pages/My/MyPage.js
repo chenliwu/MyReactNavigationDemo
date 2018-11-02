@@ -22,7 +22,6 @@ export default class MyPage extends Component {
 
     static navigationOptions = {
         header: null,
-        headerTitle: "启动页面",
     }
 
     render() {
@@ -33,7 +32,7 @@ export default class MyPage extends Component {
                     this.props.navigation.navigate("SettingsPage");
                 }}></Button>
                 <Button title="进入人脸采集页面" onPress={() => {
-                    this.props.navigation.navigate("FaceDetectionPage", { type: "collection", headerTitle: "人类采集" });
+                    this.props.navigation.navigate("FaceDetectionPage", { type: "collection", headerTitle: "人脸采集" });
                 }}></Button>
                 <Button title="注销：返回登录页面" onPress={() => {
                     this.props.navigation.navigate("LoginPage");

@@ -2,11 +2,13 @@ import LoginPage from './../pages/LoginPage';
 import ArgeementPage from './../pages/ArgeementPage';
 import AppSettingPage from './../pages/Settings/AppSettingPage';
 import FaceDetectionPage from './../pages/Settings/FaceDetectionPage';
-import MainPage from './../pages/MainPage';
+import MainPageNavigator from './../navigator/MainPageNavigator';
 
 import {
     createStackNavigator
 } from 'react-navigation';
+
+import GlobalNavigationOptions from './../navigatorConfig/GlobalNavigationOptions';
 
 export default createStackNavigator(
     {
@@ -16,20 +18,22 @@ export default createStackNavigator(
         ArgeementPage: {
             screen: ArgeementPage,
         },
-        AppSettingPage: {
-            screen: AppSettingPage,
-        },
+        // AppSettingPage: {
+        //     screen: AppSettingPage,
+        // },
         FaceDetectionPage: {
             screen: FaceDetectionPage,
         },
-        MainPage: {
-            screen: MainPage,
+        MainTabPage: {
+            screen: MainPageNavigator,
             navigationOptions: {
                 header: null,
             }
         },
     },
     {
-        initialRouteName: "LoginPage"
+        initialRouteName: "LoginPage",
+        navigationOptions: GlobalNavigationOptions,
+        headerLayoutPreset: 'center'
     }
 )

@@ -29,7 +29,7 @@ export default class SettingsPage extends Component {
                 <Text>type:{this.type}</Text>
                 <Text>headerTitle:{this.props.navigation.getParam("headerTitle")}</Text>
                 <Button title="跳转到主页" onPress={() => {
-                    this.props.navigation.replace("MainPage");
+                    this.props.navigation.replace("MainTabPage");
                 }}></Button>
             </View>
         );

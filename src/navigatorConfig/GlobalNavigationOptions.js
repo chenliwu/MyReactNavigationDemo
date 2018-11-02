@@ -1,7 +1,8 @@
 import AppTheme from '../theme/theme';
 /**
- * 2018-11-1
- * 全局配置navigationOptions
+ * 2018-11-02
+ * chenlw
+ * work：封装全局配置navigationOptions
  */
 const GlobalNavigationOptions = {
     headerTintColor: AppTheme.defaultColor,
