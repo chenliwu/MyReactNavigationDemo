@@ -6,7 +6,7 @@ import {
 import LanuchPage from './../pages/LanuchPage';
 import LoginPage from './../pages/LoginPage';
 import AppSettingPage from './../pages/Settings/AppSettingPage';
-import MainTabPage from './../pages/MainTabPage';
+import MainTabNavigator from './../navigator/MainTabNavigator';
 
 
 /**
@@ -25,7 +25,7 @@ const LanuchPageNavigator = createSwitchNavigator(
             screen: AppSettingPage,
         },
         MainTabPage: {
-            screen: MainTabPage,
+            screen: MainTabNavigator,
         },
     },
     {

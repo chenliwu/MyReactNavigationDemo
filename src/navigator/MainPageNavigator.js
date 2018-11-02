@@ -1,6 +1,9 @@
-import MainTabPage from './../pages/MainTabPage';
+import MainTabPage from './MainTabNavigator';
 import SettingsPage from './../pages/Settings/SettingsPage';
 import FaceDetectionPage from './../pages/Settings/FaceDetectionPage';
+import LoginPage from './../pages/LoginPage';
+import AppSettingPage from './../pages/Settings/AppSettingPage';
+
 
 import {
     createStackNavigator
@@ -8,7 +11,11 @@ import {
 
 import GlobalNavigationOptions from './../navigatorConfig/GlobalNavigationOptions';
 
-
+/**
+ * 2018-11-02
+ * chenlw
+ * work: 封装主页导航器
+ */
 export default createStackNavigator(
     {
         MainTabPage: {
@@ -17,12 +24,19 @@ export default createStackNavigator(
                 header: null,
             }
         },
+        LoginPage: {
+            screen: LoginPage,
+        },
+        AppSettingPage: {
+            screen: AppSettingPage,
+        },
         SettingsPage: {
             screen: SettingsPage,
         },
         FaceDetectionPage: {
             screen: FaceDetectionPage,
-        }
+        },
+
     },
     {
         initialRouteName: "MainTabPage",

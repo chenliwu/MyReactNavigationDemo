@@ -1,8 +1,8 @@
 import LanuchPage from './../pages/LanuchPage';
-import MainPageNavigator from './../navigator/MainPageNavigator';
 import AppSettingPage from './../pages/Settings/AppSettingPage';
 
 import LoginPageNavigator from './LoginPageNavigator';
+import MainPageNavigator from './MainPageNavigator'
 
 import {
     createSwitchNavigator

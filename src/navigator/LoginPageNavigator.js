@@ -18,9 +18,12 @@ export default createStackNavigator(
         ArgeementPage: {
             screen: ArgeementPage,
         },
-        // AppSettingPage: {
-        //     screen: AppSettingPage,
-        // },
+        AppSettingPage: {
+            screen: AppSettingPage,
+            navigationOptions: {
+                header: null,
+            }
+        },
         FaceDetectionPage: {
             screen: FaceDetectionPage,
         },

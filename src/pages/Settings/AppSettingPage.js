@@ -5,16 +5,10 @@ import {
     TextInput,
     Button
 } from 'react-native';
-import {
-    createSwitchNavigator
-} from 'react-navigation';
-
-import LoginPage from '../LoginPage';
-
 /**
  * 设置页面
  */
-class AppSettingPage extends React.Component {
+export default class AppSettingPage extends React.Component {
 
     static navigationOptions = {
         headerTitle: "设置",
@@ -36,15 +30,4 @@ class AppSettingPage extends React.Component {
         );
     }
 }
-
-const AppSettingPageNavigator = createSwitchNavigator(
-    {
-        AppSettingPage: AppSettingPage,
-        LoginPage: LoginPage,
-    },
-    {
-        initialRouteName: 'AppSettingPage',
-    }
-);
-export default AppSettingPageNavigator;
 

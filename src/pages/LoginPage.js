@@ -26,7 +26,7 @@ export default class LoginPage extends React.Component {
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>登录页面</Text>
                 <Button title="进入配置页面" onPress={() => {
-                    this.props.navigation.navigate("AppSettingPage");
+                    this.props.navigation.replace("AppSettingPage");
                 }}></Button>
                 <Button title="进入协议页面" onPress={() => {
                     this.props.navigation.navigate("ArgeementPage");
@@ -42,29 +42,3 @@ export default class LoginPage extends React.Component {
         );
     }
 }
-
-// export default createStackNavigator(
-//     {
-//         LoginPage: {
-//             screen: LoginPage,
-//         },
-//         ArgeementPage: {
-//             screen: ArgeementPage,
-//         },
-//         MainTabPage: {
-//             screen: MainTabPage,
-//             navigationOptions: {
-//                 header: null,
-//             }
-//         },
-//         FaceDetectionPage: {
-//             screen: FaceDetectionPage,
-//         }
-//     },
-//     {
-//         initialRouteName: "LoginPage",
-//         headerMode: 'float',
-//         headerLayoutPreset: 'center',
-//         navigationOptions: GlobalNavigationOptions
-//     }
-// );

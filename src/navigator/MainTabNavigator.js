@@ -5,19 +5,18 @@ import {
     Image
 } from 'react-native';
 import {
-    createBottomTabNavigator,
-    createStackNavigator
+    createBottomTabNavigator
 } from 'react-navigation';
 
-import ApprovePage from './Approve/ApprovePage';
-import ChartsPage from './Charts/ChartsPage';
-import NotificationPage from './Notification/NotificationPage';
-import MyPage from './My/MyPage';
+import ApprovePage from '../pages/Approve/ApprovePage';
+import ChartsPage from '../pages/Charts/ChartsPage';
+import NotificationPage from '../pages/Notification/NotificationPage';
+import MyPage from '../pages/My/MyPage';
 
-import AppTheme from './../theme/theme';
+import AppTheme from '../theme/theme';
 
 /**
- * 2018-11-1
+ * 2018-11-01
  * chenlw
  * 
  */
@@ -102,27 +101,3 @@ const TabNavigator = createBottomTabNavigator(
 );
 
 export default TabNavigator;
-
-// export default createStackNavigator(
-//     {
-//         TabNavigator: {
-//             screen: TabNavigator,
-//             navigationOptions: {
-//                 header: null,
-//             }
-//         },
-//         SettingsPage: { //设置页面
-//             screen: SettingsPage,
-//         },
-//     },
-//     {
-//         initialRouteName: "TabNavigator",
-//         headerMode: 'float',
-//         headerLayoutPreset: 'center',
-//         navigationOptions: GlobalNavigationOptions
-//     }
-// );
-
-
-
-

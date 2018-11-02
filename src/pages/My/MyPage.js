@@ -4,11 +4,6 @@ import {
     Text,
     Button
 } from 'react-native';
-import {
-    createStackNavigator
-} from 'react-navigation';
-
-import SettingsPage from '../Settings/SettingsPage';
 
 /**
  * 个人中心页面
@@ -29,35 +24,17 @@ export default class MyPage extends Component {
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>My Page</Text>
                 <Button title="进入设置页面" onPress={() => {
-                    this.props.navigation.navigate("SettingsPage");
+                    this.props.navigation.push("SettingsPage");
                 }}></Button>
                 <Button title="进入人脸采集页面" onPress={() => {
-                    this.props.navigation.navigate("FaceDetectionPage", { type: "collection", headerTitle: "人脸采集" });
+                    this.props.navigation.push("FaceDetectionPage", { type: "collection", headerTitle: "人脸采集" });
                 }}></Button>
                 <Button title="注销：返回登录页面" onPress={() => {
-                    this.props.navigation.navigate("LoginPage");
+                    this.props.navigation.replace("LoginPage");
                 }}></Button>
             </View>
         );
     }
 
 }
-
-// export default createStackNavigator(
-//     {
-//         MyPage: {
-//             screen: MyPage,
-//         },
-//         SettingsPage: {
-//             screen: SettingsPage,
-//         },
-//     },
-//     {
-//         initialRouteName: "MyPage",
-//         //headerMode:'none',  //不呈现页眉
-//         headerLayoutPreset: 'center',
-//     }
-// );
-
-
 
