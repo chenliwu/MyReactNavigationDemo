@@ -11,10 +11,19 @@ import createStackNavigator from './src/stackNavigator/createStackNavigator';
 //SwitchNavigator
 import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
 
-//LanuchPageNavigator
-import LanuchPageNavigator from './src/navigator/LanuchPageNavigator';
+/**
+ * 测试LanuchPageNavigator
+ */
+//import LanuchPageNavigator from './src/navigator/LanuchPageNavigator';
+//AppRegistry.registerComponent('MyReactNavigationDemo', () => LanuchPageNavigator);
 
 /**
- * 测试
+ * 2018-11-02
+ * chenlw
+ * work：测试APP只使用一个StackNavigator
  */
-AppRegistry.registerComponent('MyReactNavigationDemo', () => LanuchPageNavigator);
+import AppNavigator from './src/navigator1/AppNavigator';
+AppRegistry.registerComponent('MyReactNavigationDemo', () => AppNavigator);
+
+
+
