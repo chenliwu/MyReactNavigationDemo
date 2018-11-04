@@ -5,6 +5,11 @@ import {
     Button
 } from 'react-native';
 
+import {
+    StackActions,
+    NavigationActions
+} from 'react-navigation';
+
 /**
  * 人脸采集页面
  */
@@ -29,7 +34,12 @@ export default class SettingsPage extends Component {
                 <Text>type:{this.type}</Text>
                 <Text>headerTitle:{this.props.navigation.getParam("headerTitle")}</Text>
                 <Button title="跳转到主页" onPress={() => {
-                    this.props.navigation.replace("MainPage");
+                    const resetAction = StackActions.reset({
+                        index: 0,
+                        actions: [NavigationActions.navigate({ routeName: 'MainPage' })],
+                    });
+                    this.props.navigation.dispatch(resetAction);
+                    //this.props.navigation.replace("MainPage");
                 }}></Button>
             </View>
         );

@@ -35,7 +35,7 @@ export default class LoginPage extends React.Component {
                     this.props.navigation.replace("MainPage");
                 }}></Button>
                 <Button title="进入人脸登录页面" onPress={() => {
-                    this.props.navigation.replace("FaceDetectionPage", { type: 'login', headerTitle: "人脸登录" });
+                    this.props.navigation.navigate("FaceDetectionPage", { type: 'login', headerTitle: "人脸登录" });
                     //this.props.navigation.navigate("FaceDetectionPage", { type: 'login', headerTitle: "人脸登录" });
                 }}></Button>
             </View>
