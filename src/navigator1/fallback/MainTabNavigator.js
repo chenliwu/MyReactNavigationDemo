@@ -5,9 +5,8 @@ import {
     Image
 } from 'react-native';
 import {
-    createBottomTabNavigator,
-    BottomTabBar
-} from 'react-navigation-tabs';
+    createBottomTabNavigator
+} from 'react-navigation';
 
 import ApprovePage from './pages/Approve/ApprovePage';
 import ChartsPage from './pages/Charts/ChartsPage';
@@ -16,12 +15,10 @@ import MyPage from './pages/My/MyPage';
 
 import AppTheme from './../theme/theme';
 
-const TabBarComponent = (props) => (<BottomTabBar {...props} />);
-
 /**
- * 2018-11-05
+ * 2018-11-01
  * chenlw
- * work：测试自定义 tabBarComponent
+ * 
  */
 const TabNavigator = createBottomTabNavigator(
     {
@@ -84,11 +81,6 @@ const TabNavigator = createBottomTabNavigator(
     },
     {
         initialRouteName: "ApprovePage",
-        tabBarComponent: props =>
-            <TabBarComponent
-                {...props}
-                style={{ borderTopColor: '#605F60' }}
-            />,
         backBehavior: "none",   //控制 "返回" 按钮是否会导致 Tab 页切换到初始 Tab 页? 如果是, 设置为 initialRoute, 否则 none。 默认为 initialRoute的行为。
         tabBarOptions: {
             //activeTintColor: 'tomato',  //label和icon的背景色，活跃状态下

@@ -18,7 +18,7 @@ export default class SettingsPage extends Component {
     /**
      * 动态获取参数设置标题
      */
-    static navigationOptions = ({ navigation }) => ({
+    static navigationOptions = ({ navigation, screenProps }) => ({
         headerTitle: navigation.state.params.headerTitle,
     });
 

@@ -32,6 +32,10 @@ export default class ArgeementPage extends React.Component {
         }
     }
 
+    renderNavigationRightView() {
+
+    }
+
     constructor(props) {
         super(props);
     }
