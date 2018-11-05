@@ -63,7 +63,7 @@ export default createStackNavigator(
     {
         initialRouteName: "LanuchPage",
         navigationOptions: GlobalNavigationOptions,
-        headerLayoutPreset: 'center',
+        headerLayoutPreset: 'center'
     }
 );
 
