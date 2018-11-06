@@ -1,4 +1,5 @@
 import notificationStore from './NotificationStore';
+import rootNavigatorStore from './RootNavigatorStore';
 
 /**
  * 2018-11-02
@@ -6,8 +7,8 @@ import notificationStore from './NotificationStore';
  * work:
  * （1）将react-navigation与mobx互相结合
  */
-
 export default {
     notificationStore,
+    rootNavigatorStore
 }
 

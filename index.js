@@ -29,7 +29,7 @@ import App from './src/App';
 
 import createMaterialTopTabNavigator from './src/createMaterialTopTabNavigator/createMaterialTopTabNavigator';
 
-AppRegistry.registerComponent('MyReactNavigationDemo', () => createMaterialTopTabNavigator);
+AppRegistry.registerComponent('MyReactNavigationDemo', () => App);
 
 
 

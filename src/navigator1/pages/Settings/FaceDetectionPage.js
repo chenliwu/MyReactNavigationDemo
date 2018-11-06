@@ -10,9 +10,13 @@ import {
     NavigationActions
 } from 'react-navigation';
 
+import { observer, inject } from 'mobx-react/native';
+
 /**
  * 人脸采集页面
  */
+@inject("rootNavigatorStore")
+@observer
 export default class SettingsPage extends Component {
 
     /**
@@ -40,6 +44,9 @@ export default class SettingsPage extends Component {
                     });
                     this.props.navigation.dispatch(resetAction);
                     //this.props.navigation.replace("MainPage");
+                }}></Button>
+                <Button title="测试pop" onPress={() => {
+                    this.props.rootNavigatorStore.pop();
                 }}></Button>
             </View>
         );
