@@ -9,6 +9,10 @@ import {
     Image
 } from 'react-native';
 
+import {
+    NavigationActions
+} from 'react-navigation';
+
 /**
  * 服务协议页面
  */
@@ -44,6 +48,17 @@ export default class ArgeementPage extends React.Component {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>服务协议页面</Text>
+                <Button title="dismiss" onPress={() => {
+                    //如果您在嵌套（子）堆栈中并且想要关闭整个堆栈，则返回父堆栈，请调用此方法。
+                    this.props.navigation.dismiss();
+                }}></Button>
+                <Button title="reset" onPress={() => {
+                    //擦除导航器状态并将其替换为多个操作的结果。
+                    this.props.navigation.reset([NavigationActions.navigate({ routeName: 'LanuchPage' })], 0);
+                }}></Button>
+                <Button title="返回栈顶" onPress={() => {
+                    this.props.navigation.popToTop();
+                }}></Button>
             </View>
         );
     }
