@@ -7,10 +7,34 @@ import { Provider } from 'mobx-react/native';
 
 import AppNavigator from './navigator1/AppNavigator';
 
+// /**
+//  * 2018-11-02
+//  * chenlw
+//  * work：
+//  * 
+//  */
+// export default class App extends React.Component {
+
+//     render() {
+//         return (
+//             <Provider {...rootStore}>
+//                 <AppNavigator></AppNavigator>
+//             </Provider>
+//         )
+//     }
+
+//     componentDidMount = () => {
+//         console.disableYellowBox = true; //去除黄色弹框警告
+//     };
+
+// }
+
+
+import LanuchPageNavigator from './navigator2/LanuchPageNavigator';
 /**
- * 2018-11-02
+ * 2018-11-06
  * chenlw
- * work：
+ * work：重构
  * 
  */
 export default class App extends React.Component {
@@ -18,7 +42,7 @@ export default class App extends React.Component {
     render() {
         return (
             <Provider {...rootStore}>
-                <AppNavigator></AppNavigator>
+                <LanuchPageNavigator></LanuchPageNavigator>
             </Provider>
         )
     }

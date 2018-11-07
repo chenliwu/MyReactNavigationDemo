@@ -1,6 +1,8 @@
 import notificationStore from './NotificationStore';
 import rootNavigatorStore from './RootNavigatorStore';
 
+import appNavigatorStore from './AppNavigatorStore';
+
 /**
  * 2018-11-02
  * chenlw
@@ -9,6 +11,7 @@ import rootNavigatorStore from './RootNavigatorStore';
  */
 export default {
     notificationStore,
-    rootNavigatorStore
+    rootNavigatorStore,
+    appNavigatorStore,
 }
 
