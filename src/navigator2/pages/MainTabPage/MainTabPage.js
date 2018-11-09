@@ -43,25 +43,24 @@ export default class MainPageTab extends React.Component {
         }
         this.props.appNavigatorStore.setMainPageNavigation(this.props.navigation);
 
-        //订阅navigation 的生命周期方法 ：主页获得焦点后，添加安卓返回键的监听事件
-        this._didFocusSubscription = props.navigation.addListener('didFocus', payload =>
-            BackHandler.addEventListener('hardwareBackPress', this.onHardwareBackPress)
-        );
-    }
-
-    //组件加载之后添加监听
-    componentDidMount() {
-        //BackHandler.addEventListener('hardwareBackPress', this.onHardwareBackPress);
-        //订阅订阅navigation 的生命周期方法：主页失去焦点后，移除安卓的back返回键监听事件
-        this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload => {
-            BackHandler.removeEventListener('hardwareBackPress', this.onHardwareBackPress)
+        //订阅navigation 的生命周期方法 
+        this._didFocusSubscription = props.navigation.addListener('didFocus', payload => {
+            BackHandler.addEventListener('hardwareBackPress', this.onHardwareBackPress);
         });
     }
 
-    //组件卸载之前移除监听
+    /**
+     * 组件加载之后添加监听
+     */
+    componentDidMount() {
+        this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload => {
+            BackHandler.removeEventListener('hardwareBackPress', this.onHardwareBackPress);
+        });
+    }
+    /**
+     * 组件卸载之前移除监听
+     */
     componentWillUnmount() {
-        //BackHandler.removeEventListener('hardwareBackPress', this.onHardwareBackPress);
-
         this._didFocusSubscription && this._didFocusSubscription.remove();
         this._willBlurSubscription && this._willBlurSubscription.remove();
     }
@@ -74,13 +73,6 @@ export default class MainPageTab extends React.Component {
     * work：重写此事件，已适应react-navigation
     */
     onHardwareBackPress() {
-
-        // let navigation = this.props.appNavigatorStore.mainPageNavigation;
-        // if (navigation && !navigation.isFocused()) {
-        //     //如果当前页面不是主页，则关闭页面
-        //     navigation.pop();
-        //     return true;
-        // }
         if (lastBackPressed && lastBackPressed + 2000 >= Date.now()) {
             return false;
         }

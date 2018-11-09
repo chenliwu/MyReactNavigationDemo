@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text
+    Text,
+    Button
 } from 'react-native';
 import {
     createSwitchNavigator
@@ -19,6 +20,9 @@ export default class ApproveDetailsPage extends Component {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>审批详情页面</Text>
+                <Button title="进入手写审批页面" onPress={() => {
+                    this.props.navigation.push("SketchCanvasPage");
+                }}></Button>
             </View>
         );
     }

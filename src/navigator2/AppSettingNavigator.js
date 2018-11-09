@@ -17,7 +17,7 @@ const AppSettingNavigator = createStackNavigator(
         initialRouteName: "AppSettingPage",
         navigationOptions: GlobalNavigationOptions,
         headerLayoutPreset: 'center',   //将标题居中
-        headerMode: 'float', //指定页眉的呈现方式
+        headerMode: 'float',            //指定页眉的呈现方式
     }
 );
 export default AppSettingNavigator;
