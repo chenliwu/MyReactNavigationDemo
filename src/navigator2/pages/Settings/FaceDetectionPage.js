@@ -38,17 +38,15 @@ export default class SettingsPage extends Component {
                 <Text>type:{this.type}</Text>
                 <Text>headerTitle:{this.props.navigation.getParam("headerTitle")}</Text>
                 <Button title="跳转到主页" onPress={() => {
-                    const resetAction = StackActions.reset({
-                        index: 0,
-                        actions: [NavigationActions.navigate({ routeName: 'MainPage' })],
-                    });
-                    this.props.navigation.dispatch(resetAction);
+                    // const resetAction = StackActions.reset({
+                    //     index: 0,
+                    //     actions: [NavigationActions.navigate({ routeName: 'MainPage' })],
+                    // });
+                    // this.props.navigation.dispatch(resetAction);
                     //切换到switchNavigator的MainPage
-                    //const parentNavigation = this.props.navigation.dangerouslyGetParent();
-                    //parentNavigation && parentNavigation.navigate("MainPage");
-                }}></Button>
-                <Button title="测试pop" onPress={() => {
-                    this.props.rootNavigatorStore.pop();
+                    // const parentNavigation = this.props.navigation.dangerouslyGetParent();
+                    // parentNavigation && parentNavigation.navigate("MainPage");
+                    this.props.navigation.navigate("MainPage");
                 }}></Button>
             </View>
         );

@@ -11,6 +11,10 @@ import {
  */
 export default class ApproveDetailsPage extends Component {
 
+    static navigationOptions = {
+        title: "审批详情"
+    }
+
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

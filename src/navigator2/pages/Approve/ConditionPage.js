@@ -11,6 +11,10 @@ import {
  */
 export default class ConditionPage extends Component {
 
+    static navigationOptions = {
+        title: "筛选条件"
+    }
+
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>

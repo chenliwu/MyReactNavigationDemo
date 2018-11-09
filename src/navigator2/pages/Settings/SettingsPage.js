@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
+    Button,
     TouchableHighlight
 } from 'react-native';
+
+import { observer, inject } from 'mobx-react/native';
 
 /**
  * 设置页面
@@ -21,6 +24,9 @@ export default class SettingsPage extends Component {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>Settings Page</Text>
+                <Button title="返回登录页" onPress={() => {
+                    this.props.navigation.navigate("LoginPage");
+                }}></Button>
             </View>
         );
     }

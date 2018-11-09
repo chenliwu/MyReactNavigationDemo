@@ -16,10 +16,10 @@ const LoginPageNavigator = createStackNavigator(
             //登录页面
             screen: LoginPage,
         },
-        MainPage: {
-            //主页
-            screen: MainPageNavigator,
-        },
+        // MainPage: {
+        //     //主页
+        //     screen: MainPageNavigator,
+        // },
         ArgeementPage: {
             //服务协议页面
             screen: ArgeementPage,

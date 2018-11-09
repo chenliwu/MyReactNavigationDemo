@@ -15,6 +15,7 @@ import ProtectTimePage from './pages/Settings/ProtectTimePage';
 import UpdateAppPage from './pages/Settings/UpdateAppPage';
 import AboutUsPage from './pages/Settings/AboutUsPage';
 
+import MainTabPage from './pages/MainTabPage/MainTabPage';
 
 import { observer, inject } from 'mobx-react/native';
 
@@ -30,11 +31,8 @@ import {
 
 
 import GlobalNavigationOptions from './../navigatorConfig/GlobalNavigationOptions';
-
 import AppTheme from './../theme/theme';
-
 import MyBottomTabBar from './component/MyBottomTabBar';
-
 const MyTabBarComponent = (props) => (<MyBottomTabBar {...props} />);
 
 @inject("notificationStore", 'appNavigatorStore')
@@ -144,7 +142,10 @@ const MainPageNavigator = createStackNavigator(
     {
         MainPage: {
             //主页tab
-            screen: MainPage,
+            screen: MainTabPage,
+            navigationOptions: {
+                header: null,
+            }
         },
         ApproveDetailsPage: {
             //审批详情页面
