@@ -9,8 +9,8 @@ import {
     BottomTabBar
 } from 'react-navigation-tabs';
 
-import NotificationPage from './NotificationPage';
-import MyPage from './MyPage';
+import NotificationPage from './pages/NotificationPage';
+import MyPage from './pages/MyPage';
 
 import AppTheme from '../theme/theme';
 

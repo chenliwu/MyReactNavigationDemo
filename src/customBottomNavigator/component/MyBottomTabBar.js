@@ -150,9 +150,9 @@ class TabBarBottom extends React.Component {
          */
         switch (route.routeName) {
             case 'NotificationPage':
-                return (<Badge style={{ position: 'absolute', right: 50, top: 3 }} count={99} />);
+                return (<Badge count={99} />);
             case 'MyPage':
-                return (<Badge style={{ position: 'absolute', right: 50, top: 3 }} type='dot' />);
+                return (<Badge type='dot' />);
         }
         return null;
     };
