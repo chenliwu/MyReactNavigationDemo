@@ -1,4 +1,4 @@
-import LanuchPage from './pages/LanuchPage';
+import LaunchPage from './pages/LaunchPage';
 import LoginPageNavigator from './LoginPageNavigator';
 import MainPageNavigator from './MainPageNavigator';
 import AppSettingNavigator from './AppSettingNavigator';
@@ -7,11 +7,11 @@ import {
     createSwitchNavigator
 } from 'react-navigation';
 
-const LanuchPageNavigator = createSwitchNavigator(
+const LaunchPageNavigator = createSwitchNavigator(
     {
-        LanuchPage: {
+        LaunchPage: {
             //启动页面
-            screen: LanuchPage,
+            screen: LaunchPage,
         },
         LoginPage: {
             //登录页面
@@ -27,7 +27,7 @@ const LanuchPageNavigator = createSwitchNavigator(
         },
     },
     {
-        initialRouteName: "LanuchPage"
+        initialRouteName: "LaunchPage"
     }
 );
-export default LanuchPageNavigator;
+export default LaunchPageNavigator;

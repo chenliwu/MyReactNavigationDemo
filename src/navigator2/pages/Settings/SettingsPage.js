@@ -15,6 +15,9 @@ export default class SettingsPage extends Component {
 
     static navigationOptions = {
         headerTitle: "设置",
+        // headerStyle: {
+        //     backgroundColor: 'blue',
+        // },
         // headerRight:
         //     <TouchableHighlight onPress={() => {
         //         alert("点击了菜单");
@@ -24,7 +27,7 @@ export default class SettingsPage extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'green' }}>
                 <Text>Settings Page</Text>
                 <Button title="返回登录页" onPress={() => {
                     this.props.navigation.navigate("LoginPage");

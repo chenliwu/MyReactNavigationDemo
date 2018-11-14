@@ -30,7 +30,7 @@ import AppNavigator from './navigator1/AppNavigator';
 // }
 
 
-import LanuchPageNavigator from './navigator2/LanuchPageNavigator';
+import LaunchPageNavigator from './navigator2/LaunchPageNavigator';
 /**
  * 2018-11-06
  * chenlw
@@ -42,7 +42,7 @@ export default class App extends React.Component {
     render() {
         return (
             <Provider {...rootStore}>
-                <LanuchPageNavigator></LanuchPageNavigator>
+                <LaunchPageNavigator></LaunchPageNavigator>
             </Provider>
         )
     }

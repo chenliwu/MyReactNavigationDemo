@@ -3,7 +3,9 @@ import {
     View,
     Text,
     TextInput,
-    Button
+    Button,
+    StatusBar,
+    Platform
 } from 'react-native';
 
 import { observer, inject } from 'mobx-react/native';
@@ -16,9 +18,13 @@ import { observer, inject } from 'mobx-react/native';
 export default class LoginPage extends React.Component {
 
     static navigationOptions = {
-        header: null,
+        //header: null,
         headerTitle: "登录",
         gesturesEnabled: false,//不允许滑动退出
+        headerStyle: {
+            backgroundColor: 'green',
+            //paddingTop: StatusBar.currentHeight / 2,
+        }
     }
 
     constructor(props) {
@@ -28,7 +34,7 @@ export default class LoginPage extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'green' }}>
                 <Text>登录页面</Text>
                 <Button title="进入配置页面" onPress={() => {
                     //切换到switchNavigator的AppSettingPage

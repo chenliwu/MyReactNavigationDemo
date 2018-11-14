@@ -27,8 +27,6 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
 import AppNavigator from './src/navigator1/AppNavigator';
 import App from './src/App';
 
-import createMaterialTopTabNavigator from './src/createMaterialTopTabNavigator/createMaterialTopTabNavigator';
-
 AppRegistry.registerComponent('MyReactNavigationDemo', () => App);
 
 

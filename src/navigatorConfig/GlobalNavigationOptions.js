@@ -5,6 +5,7 @@ import AppTheme from '../theme/theme';
  * work：封装全局配置navigationOptions
  */
 const GlobalNavigationOptions = {
+    //headerTransparent: true,    //设置header为透明
     headerTintColor: AppTheme.defaultColor,
     headerStyle: {
         backgroundColor: AppTheme.primaryColor,//顶部标题栏的背景色
@@ -12,9 +13,9 @@ const GlobalNavigationOptions = {
     headerTitleStyle: {
         color: AppTheme.defaultColor,   //标题的字体颜色
     },
-    headerBackTitleStyle: {
-        backgroundColor: AppTheme.defaultColor, //顶部标题栏的背景色
-    },
+    // headerBackTitleStyle: {
+    //     backgroundColor: AppTheme.defaultColor, //顶部标题栏的背景色
+    // },
     gesturesEnabled: true,   //允许滑动退出
 };
 

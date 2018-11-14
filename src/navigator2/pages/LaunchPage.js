@@ -3,7 +3,9 @@ import {
     View,
     Text,
     TextInput,
-    Button
+    Button,
+    StatusBar,
+    Platform
 } from 'react-native';
 import { observer, inject } from 'mobx-react/native';
 /**
@@ -11,7 +13,7 @@ import { observer, inject } from 'mobx-react/native';
  */
 @inject("rootNavigatorStore", 'appNavigatorStore')
 @observer
-export default class LanuchPage extends React.Component {
+export default class LaunchPage extends React.Component {
 
     /**
      * 在这里配置navigationOptions
@@ -29,6 +31,17 @@ export default class LanuchPage extends React.Component {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+
+                {
+                    Platform.OS === "android" ?
+                        <StatusBar
+                            backgroundColor={'transparent'}
+                            //barStyle={'light-content'}
+                            hidden={false}
+                            translucent={true} />
+                        : <StatusBar networkActivityIndicatorVisible={true}></StatusBar>
+                }
+
                 <Text>启动页面</Text>
                 <Button title="进入登录页面" onPress={() => {
                     this.props.navigation.navigate("LoginPage");
