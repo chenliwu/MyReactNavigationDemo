@@ -10,6 +10,8 @@ import createStackNavigator from './src/stackNavigator/createStackNavigator';
 //SwitchNavigator
 import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
 
+
+
 /**
  * 测试LanuchPageNavigator
  */
@@ -42,7 +44,7 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
  * 2018-11-21
  * chenlw
  * work：测试身份验证流程
- */
+//  */
 // import AuthenticationFlowsBasics from './src/authenticationFlows/AuthenticationFlowsBasics';
 // AppRegistry.registerComponent('MyReactNavigationDemo', () => AuthenticationFlowsBasics);
 
@@ -51,7 +53,7 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
  * chenlw
  * work：基于路由的不同状态栏设置
  */
-import StatusBarSettingBasics from './src/statusBarSetting/StatusBarSettingBasics';
+// import StatusBarSettingBasics from './src/statusBarSetting/StatusBarSettingBasics';
 import StatusBarSettingBasics_1 from './src/statusBarSetting/StatusBarSettingBasics_1';
 AppRegistry.registerComponent('MyReactNavigationDemo', () => StatusBarSettingBasics_1);
 

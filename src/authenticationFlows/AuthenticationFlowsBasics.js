@@ -37,12 +37,23 @@ class SignInScreen extends React.Component {
  */
 class HomeScreen extends React.Component {
     static navigationOptions = {
+        header: null,
         title: 'Welcome to the app!',
     };
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={{
+                flex: 1,
+                backgroundColor: 'pink',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                <StatusBar
+                    //hidden={true}
+                    backgroundColor={'red'}
+                    barStyle={'default'}
+                />
                 <Button title="Show me more of the app" onPress={this._showMoreApp} />
                 <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
             </View>
@@ -64,12 +75,13 @@ class HomeScreen extends React.Component {
  */
 class OtherScreen extends React.Component {
     static navigationOptions = {
+        header: null,
         title: 'Lots of features here',
     };
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={[styles.container, { backgroundColor: 'gray' }]}>
                 <Button title="I'm done, sign me out" onPress={this._signOutAsync} />
                 <StatusBar barStyle="default" />
             </View>
@@ -103,8 +115,9 @@ class AuthLoadingScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <ActivityIndicator />
                 <StatusBar barStyle="default" />
+                <ActivityIndicator />
+
             </View>
         );
     }
