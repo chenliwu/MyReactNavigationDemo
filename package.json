@@ -7,14 +7,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "mobx": "^3.3.1",
+    "mobx-react": "^4.3.4",
     "react": "16.3.1",
     "react-native": "0.55.4",
-    "react-navigation": "^2.10.0",
     "react-native-scrollable-tab-view": "^0.8.0",
+    "react-native-tab-navigator": "^0.3.4",
     "react-native-vector-icons": "^4.5.0",
-    "teaset": "^0.5.9",
-    "mobx": "^3.3.1",
-    "mobx-react": "^4.3.4"
+    "react-navigation": "^2.10.0",
+    "teaset": "^0.5.9"
   },
   "devDependencies": {
     "babel-jest": "23.4.2",

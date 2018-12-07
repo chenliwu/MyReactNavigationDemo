@@ -11,33 +11,40 @@ import {
 import {
     createBottomTabNavigator,
     createStackNavigator,
+    createSwitchNavigator
 } from 'react-navigation';
 
 import NotificationPage from './pages/NotificationPage';
-import NotificationDetailsPage from './pages/NotificationDetailsPage';
 
 import MyPage from './pages/MyPage';
-import SettingPage from './pages/SettingPage';
 
 import AppTheme from '../theme/theme';
 
 import MyBottomTabBar from './component/MyBottomTabBar';
 
+
 const MyTabBarComponent = (props) => (<MyBottomTabBar {...props} />);
 
 /**
- * 2018-12-6
+ * 2018-12-7
  * chenlw
  * work：寻求Tab切换页面的解决方案，以达到IOS端原生Header切换的效果。
- *  Tab navigator 包含 stack navigator，你希望隐藏特定页面上的 tabbar
  *
- *
+ * 添加另一个 Stack Navigator 作为 Tab Navigator 的父级, 并将 Detail 页面放在里面。官方建议这样做。
+ * 存在的问题：
+ *  （1）header组件只会显示主页栈的header，事实上，每个页面都应当有自己的header组件以响应自己页面的操作。
+ *  （2）如果多个页面都使用主页的header组件，将会使得组件的控制逻辑变得很复杂，也不利于维护。
  */
 class MainPage extends React.Component {
 
-    static navigationOptions = {
-        headerTitle: 'MainPage'
-    };
+    // static navigationOptions = ({navigation, screenProps}) => {
+    //     console.log(navigation);
+    //     return {
+    //         title: 'MainPage',
+    //         //headerTransparent: true,
+    //         //headerBackgroundTransitionPreset:'translate'
+    //     };
+    // };
 
     constructor(props) {
         super(props);
@@ -49,6 +56,13 @@ class MainPage extends React.Component {
         }
     }
 
+
+    switchTabPage = (route) => {
+        this.props.navigation.setParams({
+            headerTitle: route.routeName
+        })
+    };
+
     render() {
 
         ///消息页面 导航栈
@@ -57,24 +71,14 @@ class MainPage extends React.Component {
                 NotificationPage: {
                     screen: NotificationPage
                 },
-                NotificationDetailsPage: {
-                    screen: NotificationDetailsPage
-                },
             }, {
                 initialRouteName: 'NotificationPage',
+                initialRouteParams: {
+                    navigation: this.props.navigation
+                },
+                headerMode: 'none'
             }
         );
-
-        NotificationPageNavigator.navigationOptions = ({ navigation }) => {
-            let tabBarVisible = true;
-            if (navigation.state.index > 0) {
-                tabBarVisible = false;
-            }
-
-            return {
-                tabBarVisible,
-            };
-        };
 
         ///我的页眉 导航栈
         const MyPageNavigator = createStackNavigator(
@@ -82,19 +86,22 @@ class MainPage extends React.Component {
                 MyPage: {
                     screen: MyPage
                 },
-                SettingPage: {
-                    screen: SettingPage
-                },
             }, {
                 initialRouteName: 'MyPage',
+                initialRouteParams: {
+                    navigation: this.props.navigation
+                },
+                headerMode: 'none'
             }
         );
+
 
         const TabNavigator = createBottomTabNavigator(
             {
                 NotificationPage: {
                     screen: NotificationPageNavigator,
                     navigationOptions: {
+                        headerTitle: '消息',//对页面的配置
                         tabBarLabel: "消息", //标签栏或 React 元素中显示的选项卡的标题字符串
                         tabBarIcon: ({focused, tintColor}) => {
                             //设置获得焦点或、失去焦点显示的图片
@@ -110,6 +117,7 @@ class MainPage extends React.Component {
                     screen: MyPageNavigator,
                     navigationOptions: {
                         tabBarLabel: "我的", //标签栏或 React 元素中显示的选项卡的标题字符串
+                        headerTitle:'我的',
                         tabBarIcon: ({focused, tintColor}) => {
                             //设置获得焦点或、失去焦点显示的图片
                             if (focused) {
@@ -126,33 +134,43 @@ class MainPage extends React.Component {
                 tabBarComponent: props =>
                     <MyTabBarComponent
                         hideRouteNames={this.state.hideRouteNames}
+                        switchTabPage={this.switchTabPage}
                         {...props}
                         style={{borderTopColor: '#605F60'}}
                     />,
                 backBehavior: "none",   //控制 "返回" 按钮是否会导致 Tab 页切换到初始 Tab 页? 如果是, 设置为 initialRoute, 否则 none。 默认为 initialRoute的行为。
                 tabBarOptions: {
-                    //activeTintColor: 'tomato',  //label和icon的背景色，活跃状态下
-                    //inactiveTintColor: 'gray',  //label和icon的背景色，不活跃状态下
-                    //activeBackgroundColor:'blue',   //活动选项卡的背景色。
-                    //inactiveBackgroundColor:'red',  //非活动选项卡的背景色。
                     labelStyle: {    //选项卡标签的样式对象。
                         fontSize: AppTheme.labelFontSizeSM,
                     },
-                    tabStyle: {  //选项卡的样式对象。
-
-                    },
-                    style: {    //选项卡栏的样式对象。
-                        //backgroundColor: 'blue',
-                    },
                 },
+                // tabBarOnPress: (obj: any) => {
+                //     console.log('tabBarOnPress');
+                //     console.log(obj);
+                //     // try {
+                //     //     const userData = await AsyncStorage.getItem('USER_INFO');
+                //     //     if (userData) {
+                //     //         obj.defaultHandler();
+                //     //     }
+                //     //     else {
+                //     //         obj.navigation.navigate('Login');
+                //     //     }
+                //     // } catch (e) {
+                //     //     Toast.show(e.message, 'center', 1000);
+                //     // }
+                // },
             }
         );
+
 
         return (
             <TabNavigator/>
         )
     }
 }
+
+
+
 
 /**
  * 2018-11-05

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Animated, TouchableWithoutFeedback, StyleSheet, View, Platform, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import {Animated, TouchableWithoutFeedback, StyleSheet, View, Platform, TouchableOpacity} from 'react-native';
+import {SafeAreaView} from 'react-navigation';
 import CrossFadeIcon from 'react-navigation-tabs/dist/views/CrossFadeIcon';
 import withDimensions from 'react-navigation-tabs/dist/utils/withDimensions';
 
@@ -20,7 +20,7 @@ const DEFAULT_MAX_TAB_ITEM_WIDTH = 125;
 class TouchableWithoutFeedbackWrapper extends React.Component {
     render() {
         //console.log(this.props);
-        const { onPress, testID, accessibilityLabel, ...props } = this.props;
+        const {onPress, testID, accessibilityLabel, ...props} = this.props;
 
         return <TouchableWithoutFeedback onPress={onPress} testID={testID} accessibilityLabel={accessibilityLabel}>
             <View {...props} />
@@ -38,10 +38,10 @@ class TabBarBottom extends React.Component {
         showIcon: true,
         allowFontScaling: true,
         adaptive: isIOS11,
-        safeAreaInset: { bottom: 'always', top: 'never' }
+        safeAreaInset: {bottom: 'always', top: 'never'}
     };
 
-    _renderLabel = ({ route, focused }) => {
+    _renderLabel = ({route, focused}) => {
         const {
             activeTintColor,
             inactiveTintColor,
@@ -55,23 +55,26 @@ class TabBarBottom extends React.Component {
             return null;
         }
 
-        const label = this.props.getLabelText({ route });
+
+        const label = this.props.getLabelText({route});
         const tintColor = focused ? activeTintColor : inactiveTintColor;
 
         if (typeof label === 'string') {
-            return <Animated.Text numberOfLines={1} style={[styles.label, { color: tintColor }, showIcon && this._shouldUseHorizontalLabels() ? styles.labelBeside : styles.labelBeneath, labelStyle]} allowFontScaling={allowFontScaling}>
+            return <Animated.Text numberOfLines={1}
+                                  style={[styles.label, {color: tintColor}, showIcon && this._shouldUseHorizontalLabels() ? styles.labelBeside : styles.labelBeneath, labelStyle]}
+                                  allowFontScaling={allowFontScaling}>
                 {label}
             </Animated.Text>;
         }
 
         if (typeof label === 'function') {
-            return label({ route, focused, tintColor });
+            return label({route, focused, tintColor});
         }
 
         return label;
     };
 
-    _renderIcon = ({ route, focused }) => {
+    _renderIcon = ({route, focused}) => {
         const {
             navigation,
             activeTintColor,
@@ -107,12 +110,12 @@ class TabBarBottom extends React.Component {
             activeOpacity={activeOpacity} inactiveOpacity={inactiveOpacity}
             activeTintColor={activeTintColor} inactiveTintColor={inactiveTintColor}
             renderIcon={renderIcon}
-            style={[styles.iconWithExplicitHeight, showLabel === false && !horizontal && styles.iconWithoutLabel, showLabel !== false && !horizontal && styles.iconWithLabel]} />;
+            style={[styles.iconWithExplicitHeight, showLabel === false && !horizontal && styles.iconWithoutLabel, showLabel !== false && !horizontal && styles.iconWithLabel]}/>;
     };
 
     _shouldUseHorizontalLabels = () => {
-        const { routes } = this.props.navigation.state;
-        const { isLandscape, dimensions, adaptive, tabStyle } = this.props;
+        const {routes} = this.props.navigation.state;
+        const {isLandscape, dimensions, adaptive, tabStyle} = this.props;
 
         if (!adaptive) {
             return false;
@@ -140,8 +143,8 @@ class TabBarBottom extends React.Component {
     /**
      * 渲染消息圆点指示器
      */
-    _renderBadge = ({ route, focused }) => {
-        console.log(route);
+    _renderBadge = ({route, focused}) => {
+        //console.log(route);
         /**
          * route props
          * （1）key
@@ -164,7 +167,7 @@ class TabBarBottom extends React.Component {
     _isRenderPage = (route) => {
         const hideRouteNames = this.props.hideRouteNames;
         return !hideRouteNames.has(route.routeName);
-    }
+    };
 
     render() {
         const {
@@ -179,7 +182,7 @@ class TabBarBottom extends React.Component {
 
         //console.log(this.props);
 
-        const { routes } = navigation.state;
+        const {routes} = navigation.state;
 
         const tabBarStyle = [styles.tabBar, this._shouldUseHorizontalLabels() && !Platform.isPad ? styles.tabBarCompact : styles.tabBarRegular, style];
 
@@ -191,25 +194,35 @@ class TabBarBottom extends React.Component {
                 if (!this._isRenderPage(route)) {
                     return null;
                 }
+
                 // if (route.routeName === 'MyPage') {
                 //     return null;
                 // }
 
                 const focused = index === navigation.state.index;
-                const scene = { route, focused };
+                const scene = {route, focused};
                 const accessibilityLabel = this.props.getAccessibilityLabel({
                     route
                 });
-                const testID = this.props.getTestID({ route });
+
+
+                const testID = this.props.getTestID({route});
 
                 const backgroundColor = focused ? activeBackgroundColor : inactiveBackgroundColor;
 
-                const ButtonComponent = this.props.getButtonComponent({ route }) || TouchableWithoutFeedbackWrapper;
+                const ButtonComponent = this.props.getButtonComponent({route}) || TouchableWithoutFeedbackWrapper;
 
-                return <ButtonComponent key={route.key}
-                    onPress={() => onTabPress({ route })} testID={testID}
+                return <ButtonComponent
+                    key={route.key}
+                    onPress={() => {
+                        onTabPress({route});
+                        // if(focused){
+                        //     this.props.switchTabPage && this.props.switchTabPage(route)
+                        // }
+                    }}
+                    testID={testID}
                     accessibilityLabel={accessibilityLabel}
-                    style={[styles.tab, { backgroundColor }, this._shouldUseHorizontalLabels() ? styles.tabLandscape : styles.tabPortrait, tabStyle]}>
+                    style={[styles.tab, {backgroundColor}, this._shouldUseHorizontalLabels() ? styles.tabLandscape : styles.tabPortrait, tabStyle]}>
                     {/* <View style={{ flex: 1, justifyContent: 'center', alignContent: 'center' }}> */}
                     {this._renderBadge(scene)}
                     {this._renderIcon(scene)}

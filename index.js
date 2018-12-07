@@ -61,16 +61,26 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
 
 
 
+// /**
+//  * 2018-12-7
+//  * chenlw
+//  * work：试IOS端的页眉切换效果
+//  *
+//  * 将navigation添加到Tab navigator，将TabBar设为隐藏。具体取决于哪个路由处于活动状态。
+//  * 存在的问题：反复切换TabBar的可见性，看起来会很奇怪。我们应该只设置TabBar是可见的。
+//  *
+//  */
+// import AppRootNavigator from './src/customBottomNavigator/AppRootNavigator';
+// AppRegistry.registerComponent('MyReactNavigationDemo', () => AppRootNavigator);
+
 /**
  * 2018-12-7
  * chenlw
  * work：试IOS端的页眉切换效果
  *
- * 将navigation添加到Tab navigator，将TabBar设为隐藏。具体取决于哪个路由处于活动状态。
- * 存在的问题：反复切换TabBar的可见性，看起来会很奇怪。我们应该只设置TabBar是可见的。
  *
  */
-import AppRootNavigator from './src/customBottomNavigator/AppRootNavigator';
+import AppRootNavigator from './src/customBottomNavigator1/AppRootNavigator';
 AppRegistry.registerComponent('MyReactNavigationDemo', () => AppRootNavigator);
 
 
