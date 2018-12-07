@@ -18,7 +18,7 @@ export default class NotificationPage extends Component {
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>MessagePage</Text>
 
-                {/*<Text>主页控制子页:{this.props.content}</Text>*/}
+                <Text>主页控制子页:{this.props.content}</Text>
 
                 <Button title={'隐藏tabBar'} onPress={()=>{
                     this.props.hideTabBar && this.props.hideTabBar();

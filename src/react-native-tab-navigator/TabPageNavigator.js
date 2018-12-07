@@ -52,13 +52,18 @@ class MainTabPage extends React.Component {
         this.state = {
             selectedTab: 'notification',
             tabBarVisible: true,
+
+            notificationContent:''
         }
     }
 
 
     onHeaderRightClick = () => {
         //alert('onHeaderRightClick');
-        this.props.navigation.navigate('NotificationDetailsPage');
+        //this.props.navigation.navigate('NotificationDetailsPage');
+        this.setState({
+            notificationContent: '主页传递到子页的内容',
+        });
     };
 
     hideTabBar = () => {
@@ -121,7 +126,7 @@ class MainTabPage extends React.Component {
                         });
                     }}>
 
-                    {<NotificationPage showTabBar={this.showTabBar} hideTabBar={this.hideTabBar} navigation={this.props.navigation}/>}
+                    {<NotificationPage content={this.state.notificationContent} showTabBar={this.showTabBar} hideTabBar={this.hideTabBar} navigation={this.props.navigation}/>}
 
                 </TabNavigator.Item>
                 <TabNavigator.Item
