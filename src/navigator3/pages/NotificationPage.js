@@ -9,7 +9,7 @@ import {
 export default class NotificationPage extends Component {
 
     static navigationOptions = {
-        headerTitle: 'NotificationPage',
+        header: null,
     };
 
     render() {
@@ -17,7 +17,7 @@ export default class NotificationPage extends Component {
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>MessagePage</Text>
                 <Button title={'进入消息详情页眉'} onPress={()=>{
-                    this.props.navigation.navigate("NotificationDetailsPage");
+                    this.props.navigation.push("NotificationDetailsPage");
                 }}/>
             </View>
         );

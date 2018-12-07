@@ -18,16 +18,13 @@ import {
 export default class MyPage extends Component {
 
     static navigationOptions = {
-        headerTitle: 'MyPage',
+        header: null,
     };
 
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>My Page</Text>
-                <Button title={'进入设置页面'} onPress={()=>{
-                    this.props.navigation.navigate("SettingPage");
-                }}/>
             </View>
         );
     }

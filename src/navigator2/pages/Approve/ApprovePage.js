@@ -17,19 +17,19 @@ export default class ApprovePage extends Component {
 
     static navigationOptions = {
         title: "审批"
-    }
+    };
 
     render() {
         return (
             <View style={{ flex: 1 }} >
-                <MyHeader
-                    headerBackgroundColor={AppTheme.primaryColor}
-                    headerHeight={60}
-                    statusBarBackGroundColor={AppTheme.primaryColor}
-                    headerTitle={"自定义标题"}
-                    headerTitleStyle={{ color: AppTheme.defaultColor }}
-                >
-                </MyHeader>
+                {/*<MyHeader*/}
+                    {/*headerBackgroundColor={AppTheme.primaryColor}*/}
+                    {/*headerHeight={60}*/}
+                    {/*statusBarBackGroundColor={AppTheme.primaryColor}*/}
+                    {/*headerTitle={"自定义标题"}*/}
+                    {/*headerTitleStyle={{ color: AppTheme.defaultColor }}*/}
+                {/*>*/}
+                {/*</MyHeader>*/}
                 {/* <View style={{ flexDirection: 'row', height: 60, backgroundColor: 'red' }}>
                     <StatusBar backgroundColor={'blue'}></StatusBar>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'blue' }}>

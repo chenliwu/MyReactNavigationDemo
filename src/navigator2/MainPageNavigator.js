@@ -27,7 +27,7 @@ const MainPageNavigator = createStackNavigator(
             //主页tab
             screen: MainTabPage,
             navigationOptions: {
-                header: null,
+                //header: null,
             }
         },
         ApproveDetailsPage: {

@@ -13,7 +13,7 @@ export default class MainPage extends React.Component {
     static navigationOptions = {
         headerTitle: "主页",
         gesturesEnabled: true,//设置滑动退出 
-    }
+    };
 
     constructor(props) {
         super(props);

@@ -15,19 +15,16 @@ import {
  * 为你的应用程序提供一种在每个新屏幕放置在堆栈顶部的屏幕之间转换的方法。
  * 
  */
-export default class MyPage extends Component {
+export default class SettingPage extends Component {
 
     static navigationOptions = {
-        headerTitle: 'MyPage',
+        header: null,
     };
 
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text>My Page</Text>
-                <Button title={'进入设置页面'} onPress={()=>{
-                    this.props.navigation.navigate("SettingPage");
-                }}/>
+                <Text>SettingPage</Text>
             </View>
         );
     }

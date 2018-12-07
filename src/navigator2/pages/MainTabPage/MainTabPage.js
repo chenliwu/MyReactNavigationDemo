@@ -27,6 +27,10 @@ var lastBackPressed = Date.now();
 @observer
 export default class MainPageTab extends React.Component {
 
+    static navigationOptions = ({navigation, screenProps}) => ({
+        headerTitle: 'title'
+    });
+
     _didFocusSubscription;
     _willBlurSubscription;
 
@@ -40,7 +44,7 @@ export default class MainPageTab extends React.Component {
         this.state = {
             activeIndex: 0,
             hideTabIndexSet: hideTabIndexSet,
-        }
+        };
         this.props.appNavigatorStore.setMainPageNavigation(this.props.navigation);
 
         //订阅navigation 的生命周期方法 

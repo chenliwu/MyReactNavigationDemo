@@ -4,40 +4,45 @@ import {
     Text,
     Image
 } from 'react-native';
+
+import {
+    createBottomTabNavigator,
+    createSwitchNavigator
+} from 'react-navigation';
+
 import {
     BottomTabBar
 } from 'react-navigation-tabs';
 
-import {
-    createBottomTabNavigator,
-    createStackNavigator,
-} from 'react-navigation';
-
 import NotificationPage from './pages/NotificationPage';
 import NotificationDetailsPage from './pages/NotificationDetailsPage';
 
+
 import MyPage from './pages/MyPage';
-import SettingPage from './pages/SettingPage';
 
 import AppTheme from '../theme/theme';
 
 import MyBottomTabBar from './component/MyBottomTabBar';
 
+
+const NotificationNavigator = createSwitchNavigator(
+    {
+        NotificationPage: {
+            screen: NotificationPage,
+        },
+        NotificationDetailsPage: {
+            screen: NotificationDetailsPage,
+        }
+    },
+    {
+        initialRouteName: 'NotificationPage'
+    }
+);
+
+
 const MyTabBarComponent = (props) => (<MyBottomTabBar {...props} />);
 
-/**
- * 2018-12-6
- * chenlw
- * work：寻求Tab切换页面的解决方案，以达到IOS端原生Header切换的效果。
- *  Tab navigator 包含 stack navigator，你希望隐藏特定页面上的 tabbar
- *
- *
- */
 class MainPage extends React.Component {
-
-    static navigationOptions = {
-        headerTitle: 'MainPage'
-    };
 
     constructor(props) {
         super(props);
@@ -50,50 +55,10 @@ class MainPage extends React.Component {
     }
 
     render() {
-
-        ///消息页面 导航栈
-        const NotificationPageNavigator = createStackNavigator(
-            {
-                NotificationPage: {
-                    screen: NotificationPage
-                },
-                NotificationDetailsPage: {
-                    screen: NotificationDetailsPage
-                },
-            }, {
-                initialRouteName: 'NotificationPage',
-            }
-        );
-
-        NotificationPageNavigator.navigationOptions = ({ navigation }) => {
-            let tabBarVisible = true;
-            if (navigation.state.index > 0) {
-                tabBarVisible = false;
-            }
-
-            return {
-                tabBarVisible,
-            };
-        };
-
-        ///我的页眉 导航栈
-        const MyPageNavigator = createStackNavigator(
-            {
-                MyPage: {
-                    screen: MyPage
-                },
-                SettingPage: {
-                    screen: SettingPage
-                },
-            }, {
-                initialRouteName: 'MyPage',
-            }
-        );
-
         const TabNavigator = createBottomTabNavigator(
             {
                 NotificationPage: {
-                    screen: NotificationPageNavigator,
+                    screen: NotificationNavigator,
                     navigationOptions: {
                         tabBarLabel: "消息", //标签栏或 React 元素中显示的选项卡的标题字符串
                         tabBarIcon: ({focused, tintColor}) => {
@@ -107,7 +72,7 @@ class MainPage extends React.Component {
                     }
                 },
                 MyPage: {
-                    screen: MyPageNavigator,
+                    screen: MyPage,
                     navigationOptions: {
                         tabBarLabel: "我的", //标签栏或 React 元素中显示的选项卡的标题字符串
                         tabBarIcon: ({focused, tintColor}) => {
@@ -149,7 +114,7 @@ class MainPage extends React.Component {
         );
 
         return (
-            <TabNavigator/>
+            <TabNavigator></TabNavigator>
         )
     }
 }

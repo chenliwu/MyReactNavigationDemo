@@ -20,32 +20,32 @@ class RootNavigatorStore {
     @action
     setRootNavigation = (rootNavigation) => {
         this.rootNavigation = rootNavigation;
-    }
+    };
 
     navigate = (routeName) => {
         this.rootNavigation && this.rootNavigation.navigate(routeName);
-    }
+    };
     navigate = (routeName, params) => {
         this.rootNavigation && this.rootNavigation.navigate(routeName, params);
-    }
+    };
 
     push = (routeName) => {
         this.rootNavigation && this.rootNavigation.push(routeName);
-    }
+    };
     push = (routeName, params) => {
         this.rootNavigation && this.rootNavigation.push(routeName, params);
-    }
+    };
 
     replace = (routeName) => {
         this.rootNavigation && this.rootNavigation.replace(routeName);
-    }
+    };
     replace = (routeName, params) => {
         this.rootNavigation && this.rootNavigation.replace(routeName, params);
-    }
+    };
 
     pop = () => {
         this.rootNavigation && this.rootNavigation.pop();
-    }
+    };
 
 }
 
