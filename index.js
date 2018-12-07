@@ -73,6 +73,18 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
 // import AppRootNavigator from './src/customBottomNavigator/AppRootNavigator';
 // AppRegistry.registerComponent('MyReactNavigationDemo', () => AppRootNavigator);
 
+// /**
+//  * 2018-12-7
+//  * chenlw
+//  * work：试IOS端的页眉切换效果
+//  *
+//  *
+//  */
+// import AppRootNavigator from './src/customBottomNavigator1/AppRootNavigator';
+// AppRegistry.registerComponent('MyReactNavigationDemo', () => AppRootNavigator);
+
+
+
 /**
  * 2018-12-7
  * chenlw
@@ -80,8 +92,7 @@ import createSwitchNavigator from './src/switchNavigator/createSwitchNavigator';
  *
  *
  */
-import AppRootNavigator from './src/customBottomNavigator1/AppRootNavigator';
-AppRegistry.registerComponent('MyReactNavigationDemo', () => AppRootNavigator);
-
+import TabPageNavigator from './src/react-native-tab-navigator/TabPageNavigator';
+AppRegistry.registerComponent('MyReactNavigationDemo', () => TabPageNavigator);
 
 

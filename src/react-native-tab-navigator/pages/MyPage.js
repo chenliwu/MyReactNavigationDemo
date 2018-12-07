@@ -22,13 +22,15 @@ export default class MyPage extends Component {
     };
 
     render() {
+        const {navigation}=this.props;
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                 <Text>My Page</Text>
                 <Button title={'进入设置页面'} onPress={()=>{
-                    const navigation = this.props.navigation.getParam('navigation',"");
-                    navigation && navigation.navigate('SettingPage');
-                    //this.props.navigation.navigate("SettingPage");
+                    //const navigation = this.props.navigation.getParam('navigation',"");
+                    //navigation && navigation.navigate('SettingPage');
+                    navigation && navigation.navigate("SettingPage");
+
                 }}/>
             </View>
         );
